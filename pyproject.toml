@@ -1,0 +1,24 @@
+[project]
+name = "multishift"
+version = "0.1.0"
+description = "多平台爆文改写器：一篇长文一键改成小红书/抖音/公众号三套平台原生文案"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "typer>=0.12",
+  "openai>=1.0",
+  "jinja2>=3.1",
+  "pyyaml>=6.0",
+  "pydantic-settings>=2.0",
+]
+
+[project.scripts]
+multishift = "multishift.cli:app"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/multishift/__init__.py
+src/multishift/cli.py
+src/multishift/llm.py
+src/multishift.egg-info/PKG-INFO
+src/multishift.egg-info/SOURCES.txt
+src/multishift.egg-info/dependency_links.txt
+src/multishift.egg-info/entry_points.txt
+src/multishift.egg-info/requires.txt
+src/multishift.egg-info/top_level.txt
+src/multishift/rewriters/__init__.py
+tests/test_templates.py

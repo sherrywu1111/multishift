@@ -1,0 +1,44 @@
+# multishift 多平台爆文改写器
+
+输入一篇长文/口播稿，一键输出**小红书图文、抖音口播、公众号长文**三套平台原生风格文案，每套附 5 个备选标题。
+
+## 快速开始
+
+```bash
+pip install -e .
+export MULTISHIFT_API_KEY="你的 key"   # OpenAI 兼容 API，默认 DeepSeek
+# 可选：换模型
+# export MULTISHIFT_BASE_URL="https://api.openai.com/v1"
+# export MULTISHIFT_MODEL="gpt-4o-mini"
+
+multishift rewrite-cmd examples/sample.md -o out/
+# 输出 out/sample.xiaohongshu.md / sample.douyin.md / sample.wechat.md
+
+multishift templates   # 查看可用平台模板
+```
+
+## 平台模板
+
+模板是纯 YAML，放在 `src/multishift/templates/`，可直接改：
+
+| 模板 | 风格要点 |
+|---|---|
+| `xiaohongshu.yaml` | ≤800 字、短段落+emoji、3 行钩子开头、话题标签 |
+| `douyin.yaml` | 60-90 秒口播、3 秒钩子、停顿/重音标注、220-280 字 |
+| `wechat.yaml` | 场景开头、4-6 节递进、观点态度、延伸思考 |
+
+换模型只改环境变量，不用动代码。
+
+## 三端示例对比
+
+同一篇输入，三种输出气质完全不同：小红书重钩子+干货分段，抖音重口语节奏+时长控制，公众号重场景+逻辑递进。跑一遍 `examples/sample.md` 即可直观对比。
+
+## Roadmap
+
+- v0.1：CLI 三端改写最小闭环（本版本）
+- v0.2：标题库扩展、FastAPI 最小 Web 版
+- v0.3：模板市场（社区可 PR 自己的平台模板）
+
+## License
+
+MIT

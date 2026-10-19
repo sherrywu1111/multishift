@@ -1,0 +1,2 @@
+[console_scripts]
+multishift = multishift.cli:app
